@@ -2,9 +2,8 @@ services:
   - type: web
     name: edumithra-backend
     runtime: python
-    rootDir: backend
     buildCommand: pip install -r requirements.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    startCommand: cd backend && uvicorn app.main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PROJECT_NAME
         value: EDUMITHRA -- AI Learning Copilot
@@ -17,5 +16,5 @@ services:
       - key: YOUTUBE_API_KEY
         sync: false
       - key: FRONTEND_URL
-        sync: false
+        value: https://edumithra-learning-hub.vercel.app
     plan: free
