@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: edumithra-backend
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PROJECT_NAME
+        value: EDUMITHRA -- AI Learning Copilot
+      - key: DATABASE_URL
+        value: sqlite:///./edumithra.db
+      - key: JWT_SECRET
+        value: edumithra_super_secret_key_change_me_in_production_1234567890
+      - key: GROQ_API_KEY
+        sync: false
+      - key: YOUTUBE_API_KEY
+        sync: false
+    plan: free
