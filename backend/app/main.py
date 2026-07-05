@@ -16,9 +16,11 @@ app = FastAPI(
 )
 
 # Enable CORS for Next.js frontend calls
+# FRONTEND_URL env var controls allowed origins (defaults to "*" for local dev)
+allowed_origins = ["*"] if settings.FRONTEND_URL == "*" else [settings.FRONTEND_URL]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Allow all for local hackathon demo convenience
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

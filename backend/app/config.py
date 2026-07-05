@@ -12,6 +12,7 @@ class Settings(BaseSettings):
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 1 day
     GROQ_API_KEY: str = os.getenv("GROQ_API_KEY", "")
     YOUTUBE_API_KEY: str = os.getenv("YOUTUBE_API_KEY", "")
+    FRONTEND_URL: str = os.getenv("FRONTEND_URL", "*")
 
     class Config:
         case_sensitive = True

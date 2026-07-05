@@ -11,9 +11,11 @@ services:
       - key: DATABASE_URL
         value: sqlite:///./edumithra.db
       - key: JWT_SECRET
-        value: edumithra_super_secret_key_change_me_in_production_1234567890
+        sync: false
       - key: GROQ_API_KEY
         sync: false
       - key: YOUTUBE_API_KEY
+        sync: false
+      - key: FRONTEND_URL
         sync: false
     plan: free
