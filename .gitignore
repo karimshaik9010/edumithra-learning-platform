@@ -1,0 +1,81 @@
+# ============================================================
+# EDUMITHRA — .gitignore (Next.js + FastAPI Monorepo)
+# ============================================================
+
+# ─── Environment / Secrets ───────────────────────────────────
+.env
+.env.*
+!.env.example
+backend/.env
+backend/.env.*
+frontend/.env
+frontend/.env.*
+frontend/.env.local
+frontend/.env.development.local
+frontend/.env.test.local
+frontend/.env.production.local
+*.pem
+*.key
+*.cert
+
+# ─── Python / FastAPI ────────────────────────────────────────
+backend/venv/
+backend/__pycache__/
+backend/app/__pycache__/
+backend/app/routers/__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+*.so
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+*.manifest
+*.spec
+*.sqlite3
+*.db
+
+# ─── Next.js / Node ──────────────────────────────────────────
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+frontend/.cache/
+node_modules/
+.next/
+out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+*.tsbuildinfo
+next-env.d.ts
+
+# ─── OS & Editor ─────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ─── Testing / Coverage ──────────────────────────────────────
+coverage/
+.coverage
+htmlcov/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# ─── Misc ────────────────────────────────────────────────────
+*.log
+*.tmp
+*.bak
+verify_apis.py
